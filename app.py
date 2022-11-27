@@ -45,11 +45,11 @@ ALLOWED_EXTENSIONS_AUDIO = {'mp3', 'aac', 'flac'}
 HTTP_404_NOT_FOUND  = 404
 HTTP_500_INTERNAL_SERVER_ERROR = 500
 
-file_path = os.path.abspath(os.getcwd())+"\database.db"
+#file_path = os.path.abspath(os.getcwd())+"\database.db"
 app = Flask(__name__)
 
 bcrypt = Bcrypt(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'SXS9376KEY'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 db = SQLAlchemy(app)
